@@ -18,7 +18,7 @@ f = open(fname, 'w')
 f.write("time, speed[km/h], rpm\n")
 while True:
     t = time.strftime('%Y-%m-%d %H:%M:%S')
-    speed = connection.query(obd.commands.SPPED).value
+    speed = connection.query(obd.commands.SPEED).value
     rpm = connection.query(obd.commands.RPM).value 
     f.write(f"{t}, {speed}, {rpm}\n")
     time.sleep(0.001) #1ms
