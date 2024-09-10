@@ -6,11 +6,11 @@ ports = obd.scan_serial()
 print("Available ports: ", ports)
 if len(ports) == 0:
     print("No ports found")
-    exit()
+    #exit()
 else:
     print("Using port: ", ports[0])
 
-connection = obd.OBD(portstr=ports[0], protocol="6", baudrate=38400, fast=False, timeout=40, start_low_power=True)
+connection = obd.OBD(portstr=ports[0], fast=False, timeout=40)
 
 while True:
     cmd = obd.commands.SPEED
